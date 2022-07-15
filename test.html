@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+
+
+
+    setTimeout(()=>{
+        window.postMessage(
+            {
+                type: "__AREX_EXTENSION_REQUEST__",
+                config:{
+                    url:'https://blackhole-m.m.jd.com/getinfo',
+                    config:{
+                        method:'POST',
+                        body:JSON.stringify({
+                            name:'zt'
+                        })
+                    }
+                },
+            },
+            "*"
+        )
+    },100)
+
+
+    window.addEventListener("message", (ev) => {
+        // if ()
+        // console.log(ev,'woshi')
+
+        if (ev.data.type==="__AREX_EXTENSION_RES__"){
+            console.log(ev.data.res,'eeeeee')
+        }
+    })
+
+</script>
+</html>
